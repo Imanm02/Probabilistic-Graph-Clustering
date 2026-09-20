@@ -4,10 +4,9 @@ import networkx as ntx
 N=1
 n=1000
 p=0.033
-# in problem statement p=0.0033,
-# but the problem author is an idiot who does not know basic graph theory and probability
-# if p=0.0033, its easy to prove the probability of having a connected graph is almost 0
-# **** EE project
+# The problem statement specifies p=0.0033. For n=1000 that sits below the connectivity
+# threshold ln(n)/n = 0.0069, so almost every sample is disconnected and the mean shortest
+# path length is undefined. I use p=0.033 instead, which is comfortably above the threshold.
 
 
 def gen_graph(n, p) -> ntx.Graph:
